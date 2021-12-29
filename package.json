@@ -1,0 +1,22 @@
+{
+  "name": "node-cluster-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ottoo/node-cluster-example.git",
+  "author": "Otto Kivikärki <otto.kivikarki@vincit.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:single": "node server.js",
+    "start:cluster": "ENABLE_CLUSTERING=true node server.js",
+    "test:single": "autocannon -c 1000 -d 30 -w 1 http://localhost:3000",
+    "test:cluster": "autocannon -c 1000 -d 30 -w 1 http://localhost:3000"
+  },
+  "dependencies": {
+    "@koa/router": "10.1.1",
+    "koa": "2.13.4",
+    "koa-body": "4.2.0"
+  },
+  "devDependencies": {
+    "autocannon": "7.5.1"
+  }
+}
